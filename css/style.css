@@ -1,0 +1,234 @@
+/* ManyCreative — static rebuild
+   Clean, photography-forward, minimal chrome. */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #555;
+  --paper: #ffffff;
+  --line: #e6e6e6;
+  --accent: #111;
+  --max: 1080px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 20px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-title {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.site-title img { max-height: 52px; margin: 0 auto; }
+
+.site-nav { margin-top: 18px; }
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- Splash (index) ---------- */
+.splash {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.splash .logo { max-width: 420px; width: 100%; }
+
+.splash .portrait {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.splash p {
+  max-width: 560px;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+
+.splash p a { color: var(--ink); }
+
+.enter-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  padding: 12px 56px;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: background .15s ease, color .15s ease;
+}
+
+.enter-btn:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Main content ---------- */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.intro-blurb {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.intro-blurb strong { color: var(--ink); }
+
+.contact-line {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* ---------- Galleries ---------- */
+.gallery {
+  columns: 3 300px;
+  column-gap: 14px;
+}
+
+.gallery a {
+  display: block;
+  margin-bottom: 14px;
+  break-inside: avoid;
+}
+
+.gallery img {
+  width: 100%;
+  transition: opacity .15s ease;
+}
+
+.gallery a:hover img { opacity: .85; }
+
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.clients {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.clients h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+/* ---------- About ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+.about-grid figure figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.about-copy h1,
+.about-copy h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 32px 0 12px;
+}
+
+.about-copy h1:first-child,
+.about-copy h2:first-child { margin-top: 0; }
+
+.press-list {
+  list-style: none;
+}
+
+.press-list li { margin-bottom: 8px; }
+
+.press-list a { color: var(--ink); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
