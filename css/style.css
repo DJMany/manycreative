@@ -251,3 +251,11 @@ main {
   height: 100%;
   border: 0;
 }
+
+/* ---------- Video embed (Intro splash) ---------- */
+.splash .video-wrap {
+  width: 100%;
+  max-width: 720px;
+  margin: 0;
+  padding-bottom: min(56.25%, 405px);
+}
